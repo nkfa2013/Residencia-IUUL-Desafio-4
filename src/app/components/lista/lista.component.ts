@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ExchangeRate } from ''
 
 @Component({
   selector: 'app-lista',
@@ -8,4 +9,9 @@ import { Component } from '@angular/core';
 })
 export class ListaComponent {
 
+}
+
+export interface Currency {
+  code: string;
+  name: string;
 }

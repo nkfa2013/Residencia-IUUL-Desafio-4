@@ -1,0 +1,22 @@
+<p-table [value]="conversionHistory">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Data</th>
+            <th>Hora</th>
+            <th>Valor de Origem</th>
+            <th>Valor de Destino</th>
+            <th>Taxa</th>
+            <th>Ações</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-conversion>
+        <tr>
+            <td>{{ conversion.date }}</td>
+            <td>{{ conversion.time }}</td>
+            <td>{{ conversion.fromAmount }} {{ conversion.fromCurrency }}</td>
+            <td>{{ conversion.toAmount }} {{ conversion.toCurrency }}</td>
+            <td>{{ conversion.rate }}</td>
+            <td><button (click)="deleteConversion(conversion.id)">Excluir</button></td>
+        </tr>
+    </ng-template>
+</p-table>

@@ -1,1 +1,14 @@
-<p>lista works!</p>
+<p-table [value]="currencies" [paginator]="true" [rows]="10">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Nome</th>
+        <th>Símbolo</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-currency>
+      <tr>
+        <td>{{ currency.name }}</td>
+        <td>{{ currency.symbol }}</td>
+      </tr>
+    </ng-template>
+  </p-table>

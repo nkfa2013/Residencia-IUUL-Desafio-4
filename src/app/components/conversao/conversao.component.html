@@ -1,1 +1,21 @@
-<p>conversao works!</p>
+<form (ngSubmit)="convertCurrency()">
+    <label for="fromCurrency">Moeda de Origem:</label>
+    <select id="fromCurrency" [(ngModel)]="fromCurrency" name="fromCurrency">
+        <option *ngFor="let currency of currencies" [value]="currency.symbol">{{ currency.name }}</option>
+    </select>
+
+    <label for="toCurrency">Moeda de Destino:</label>
+    <select id="toCurrency" [(ngModel)]="toCurrency" name="toCurrency">
+        <option *ngFor="let currency of currencies" [value]="currency.symbol">{{ currency.name }}</option>
+    </select>
+
+    <label for="amount">Valor:</label>
+    <input type="number" [(ngModel)]="amount" name="amount" required>
+
+    <button type="submit">Converter</button>
+</form>
+
+<div *ngIf="conversionResult">
+    <p>Resultado: {{ conversionResult }} {{ toCurrency }}</p>
+    <p>Taxa de Conversão: {{ conversionRate }}</p>
+</div>
