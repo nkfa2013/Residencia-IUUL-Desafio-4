@@ -7,7 +7,8 @@ import { Observable } from 'rxjs';
 })
 
 export class ExchangeRateService {
-  private apiUrl = 'https://api.exchangerate-api.com/v4/latest/USD';
+  private apiKey = '1c7ddf09c8cf31332dc866d0';
+  private apiUrl = 'https://v6.exchangerate-api.com/v6/${apiKey}/quota';
 
   constructor(private http: HttpClient) { }
 

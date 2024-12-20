@@ -10,4 +10,5 @@ import { InicioComponent } from "./components/inicio/inicio.component";
 })
 export class AppComponent {
   title = 'Residencia-IUUL-Desafio-4';
+currencies: any;
 }
