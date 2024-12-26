@@ -1,14 +1,14 @@
-<p-table [value]="currencies" [paginator]="true" [rows]="10">
-    <ng-template pTemplate="header">
-      <tr>
-        <th>Nome</th>
-        <th>Símbolo</th>
-      </tr>
-    </ng-template>
-    <ng-template pTemplate="body" let-currency>
-      <tr>
-        <td>{{ currency.name }}</td>
-        <td>{{ currency.symbol }}</td>
-      </tr>
-    </ng-template>
-  </p-table>
+<p-table [value]="moedas" [paginator]="true" [rows]="20">
+  <ng-template pTemplate="header">
+    <tr>
+      <th pSortableColumn="codigo">Código <p-sortIcon field="codigo"></p-sortIcon></th>
+      <th pSortableColumn="nome">Nome <p-sortIcon field="nome"></p-sortIcon></th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-currency>
+    <tr>
+      <td>{{ moedas[0] }}</td>
+      <td>{{ moedas[1] }}</td>
+    </tr>
+  </ng-template>
+</p-table>
