@@ -1,15 +1,15 @@
-<header>
-    <div class="menu">
-        <img class="icone-header" src="/src/app/cambio.png">
-        <h2>Conversor Monetário</h2>
-
-        <div class="btns">
-            <button>Listar Moedas</button>
-            <button>Converter Moedas</button>
-        </div>
+<p-menubar>
+    <div class="menu-header">
+        <i class="pi pi-wallet menu-icon"></i>
+        <h1 class="menu-titulo">Conversor Monetário</h1>
     </div>
-</header>
 
-<app-inicio></app-inicio>
+    <div class="menu-buttons">
+        <button pButton type="button" label="Inicio" routerLink=""></button>
+        <button pButton type="button" label="Listar Moedas" icon="pi pi-list" routerLink="/lista"></button>
+        <button pButton type="button" label="Converter Moedas" routerLink="/conversao"></button>
+        <button pButton type="button" label="Histórico de Conversão" routerLink="/historico"></button>
+    </div>
+</p-menubar>
 
-<app-lista></app-lista>
+<router-outlet></router-outlet>

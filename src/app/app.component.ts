@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { InicioComponent } from "./components/inicio/inicio.component";
-import { ListaComponent } from "./components/lista/lista.component";
-import { HttpClient } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+import { ButtonModule } from 'primeng/button';
+import { MenubarModule } from 'primeng/menubar';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, InicioComponent, ListaComponent],
+  imports: [RouterModule, ButtonModule, MenubarModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

@@ -1,14 +1,33 @@
-header {
-    background-color: beige;
-}
-.menu {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    align-items: center;
-    gap: 30px;
+.p-menubar {
+    flex-direction: column;
 }
 
-.btns {
-    gap: 50px;
+.menu-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
+
+.menu-icon {
+    font-size: 1.5rem;
+    color: #007ad9;
+}
+
+.menu-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.menu-buttons {
+    display: flex;
+}
+
+.menu-buttons button {
+    margin-left: 10px;
+}
+
+.active {
+    background-color: #007ad9 !important;
+    color: white !important;
+  }

@@ -9,21 +9,40 @@ import { ExchangeRateService } from '../../services/exchange-rate.service';
   templateUrl: './lista.component.html',
   styleUrl: './lista.component.css'
 })
-export class ListaComponent implements OnInit{
-  
-  moedas: any[] = [];
+export class ListaComponent implements OnInit {
+
+  dados: any{ any[], any[] } = {
+    codigo: [],
+    nome: []
+};
+  moedas: any = [];
   //listou: boolean = true;
-  
-  constructor(private _ExchangeRateService: ExchangeRateService) {}
+
+  constructor(private _ExchangeRateService: ExchangeRateService) { }
 
   ngOnInit(): void {
     this._ExchangeRateService.getExchangeRates().subscribe((data) => {
-      this.moedas = Object.entries(data).map(([cod, nome]) => ({
-        codigo: cod,
-        nome: nome,
-      }));
-      //this.listou = false;
+      this.dados.codigo = Object.entries(data.supported_codes).map(([i, value]) => ({
+        index: i,
+        value: value,
+      }).value).map(([key, value]) => ({
+        codigo: key,
+        nome: value,
+      }).codigo);
+
+      this.dados.nome = Object.entries(data.supported_codes).map(([i, value]) => ({
+        index: i,
+        value: value,
+      }).value).map(([key, value]) => ({
+        codigo: key,
+        nome: value,
+      }).nome);
+
+      console.log(this.moedas);
     });
   }
-  
+
+  /* ngOnInit() {
+    this._ExchangeRateService.getExchangeRates().subscribe(data => this.moedas = data.supported_codes);
+  } */
 }
